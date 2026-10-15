@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Ganesh Mishtanna Bhandar | Pure Desi Ghee Sweets & Snacks</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-warm: #FAF6EE;
+      --ink-charcoal: #1C1917;
+      --accent-marigold: #D97706;
+      --secondary-rust: #9A3412;
+      --neutral-border: #E7E0D3;
+      --card-white: #FFFDF9;
+      --text-muted: #57534E;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-warm);
+      color: var(--ink-charcoal);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 84px; /* Space for mobile sticky bottom bar */
+    }
+
+    h1, h2, h3, .serif-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Sticky Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg-warm);
+      border-bottom: 1px solid var(--neutral-border);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--secondary-rust);
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 0.75rem;
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-charcoal);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .header-cta-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn:active {
+      opacity: 0.85;
+    }
+
+    .btn-wa {
+      background-color: #25D366;
+      color: #FFFFFF;
+    }
+
+    .btn-call {
+      border: 1.5px solid var(--secondary-rust);
+      color: var(--secondary-rust);
+      background-color: transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-marigold);
+      color: #1C1917;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+
+    /* Asymmetric Layout Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 16px;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 96px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.35rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: var(--ink-charcoal);
+    }
+
+    .hero-content .proof-line {
+      font-size: 1.05rem;
+      color: var(--secondary-rust);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .trust-microline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card {
+      background-color: var(--card-white);
+      border: 1px solid var(--neutral-border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+
+    /* Layout-breaking moment */
+    .layout-breaker {
+      background-color: var(--secondary-rust);
+      color: #FFFDF9;
+      padding: 24px;
+      border-radius: 12px;
+      margin: 80px 0;
+      transform: rotate(-1deg);
+      text-align: center;
+    }
+
+    .layout-breaker h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 96px;
+    }
+
+    .trust-item {
+      background-color: var(--card-white);
+      border: 1px solid var(--neutral-border);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .trust-item .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-marigold);
+    }
+
+    .trust-item .label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Sticky Bottom Bar (Mobile <= 768px) */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #FFFDF9;
+      border-top: 1px solid var(--neutral-border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 10px 16px;
+      z-index: 1000;
+    }
+
+    .mobile-sticky-bar a {
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .mob-call {
+      border: 1.5px solid var(--secondary-rust);
+      color: var(--secondary-rust);
+    }
+
+    .mob-wa {
+      background-color: #25D366;
+      color: #FFFFFF;
+    }
+
+    @media (min-width: 769px) {
+      .nav-links {
+        display: flex;
+      }
+      .mobile-sticky-bar {
+        display: none;
+      }
+      body {
+        padding-bottom: 0;
+      }
+      .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+      .trust-strip {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Sticky Header -->
+  <header>
+    <div class="logo">
+      Shree Ganesh Mithai
+      <span>Pure Desi Ghee & Snacks • Main Bazaar Road</span>
+    </div>
+    <div class="nav-links">
+      <a href="#specialties">Specialties</a>
+      <a href="#bulk-orders">Bulk Orders</a>
+      <a href="#location">Visit Us</a>
+    </div>
+    <div class="header-cta-group">
+      <a href="tel:+919876543210" class="btn btn-call">Call</a>
+      <a href="https://wa.me." class="btn btn-wa">WhatsApp</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 2. Hero Section (12-18 word value prop: 15 words) -->
+    <section class="hero">
+      <div class="hero-content">
+        <!-- Inline SVG 1: Marigold Petal Motif -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" style="margin-bottom: 8px;">
+          <path d="M12 2C14 6 18 8 22 12C18 16 14 18 12 22C10 18 6 16 2 12C6 8 10 6 12 2Z"/>
+        </svg>
+        <h1>Fresh Pure Desi Ghee Sweets Crafted Daily Since 1978 in Town.</h1>
+        <div class="proof-line">Rated 4.8/5 by 1,200+ local families across the district.</div>
+        <p>Warm Kaju Katli, Rasgulla, and Morning Hot Samosas prepared fresh every sunrise with 100% pure milk and desi ghee.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me." class="btn btn-primary">Order via WhatsApp</a>
+          <a href="tel:+919876543210" class="btn btn-call">Direct Call Shop</a>
+        </div>
+        <div class="trust-microline">✓ Same-day local counter pickup or doorstep delivery in 45 mins</div>
+      </div>
+
+      <div class="hero-card">
+        <!-- Inline SVG 2: Paisley Motif -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9A3412" stroke-width="2">
+          <path d="M12 2C8 6 4 10 4 15C4 19.4 7.6 23 12 23C16.4 23 20 19.4 20 15C20 10 16 6 12 2Z"/>
+        </svg>
+        <h3 style="margin: 12px 0 8px 0;">Today's Fresh Batch</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">Prepared hot at 6:00 AM & 3:00 PM daily.</p>
+        <ul style="list-style: none; font-size: 0.9rem; display: flex; flex-direction: column; gap: 8px;">
+          <li>✨ Desi Ghee Motichoor Ladoo — ₹520/kg</li>
+          <li>✨ Special Paneer Rasgulla — ₹360/kg</li>
+          <li>✨ Khoya Kaju Katli — ₹780/kg</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Layout-breaking moment -->
+    <div class="layout-breaker">
+      <h3>🎉 Shaadi & Festival Bulk Booking Open!</h3>
+      <p style="font-size: 0.92rem;">Special custom gift boxes available for family functions and corporate gifting.</p>
+    </div>
+
+    <!-- 3. Trust Strip -->
+    <section class="trust-strip">
+      <div class="trust-item">
+        <div class="num">46+</div>
+        <div class="label">Years of Trust</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">100%</div>
+        <div class="label">Pure Desi Ghee</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">2,500+</div>
+        <div class="label">Monthly Happy Families</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">15 Min</div>
+        <div class="label">Average Order Readiness</div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Sticky Bottom Bar on Mobile <= 768px -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:+919876543210" class="mob-call">📞 Call Now</a>
+    <a href="https://wa.me." class="mob-wa">💬 WhatsApp Us</a>
+  </div>
+
+</body>
+</html>
